@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app
+  namespace: testbuild
+  labels:
+    app: app
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      appProtocol: tcp
+      port: 8000
+      targetPort: 8000
+  selector:
+    app: app
